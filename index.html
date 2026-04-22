@@ -40,14 +40,10 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
-  color: #22c55e;
-}
-
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
 .gradient {
@@ -56,11 +52,21 @@ nav a:hover {
   color: transparent;
 }
 
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+
 /* SECTION */
 section {
   max-width: 1000px;
   margin: auto;
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 /* CARD */
@@ -71,11 +77,6 @@ section {
   border-radius: 16px;
   padding: 20px;
   margin-bottom: 20px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
 }
 
 /* GRID */
@@ -83,29 +84,6 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
   gap: 20px;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 10px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-/* ANIMATION */
-.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 </style>
 </head>
@@ -115,95 +93,130 @@ section {
 <nav>
   <h3 class="gradient">Sujith</h3>
   <div>
+    <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<div class="hero">
-  <h1>Hi, I'm <span class="gradient">Sujith K</span> 👋</h1>
-  <p>AI Developer • Web Developer • UI/UX Enthusiast</p>
+<!-- HOME -->
+<div id="home" class="hero">
+  <h1>Hi, I'm <span class="gradient">Sujith</span> 👋</h1>
+  <p>Web Developer</p>
+
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="#contact" class="btn">Get In Touch</a>
 </div>
 
-<section id="about" class="hidden">
+<!-- ABOUT -->
+<section id="about">
+
 <div class="card">
 <h2>👤 About Me</h2>
 <p>
-Passionate Computer Science student focused on building real-world AI and web solutions.
+Hello! I'm Sujith, a Computer Science and Design student passionate about building real-world solutions using AI and web technologies.
 </p>
 </div>
 
 <div class="card">
 <h2>🎓 Education</h2>
 <p><b>B.E. Computer Science and Design</b><br>
-Easwari Engineering College<br>
+Easwari Engineering College (Autonomous)<br>
 Second Year • Chennai</p>
 </div>
 
-<div class="card">
-<h2>🛠 Skills</h2>
-<div class="grid">
-  <div class="card">Python</div>
-  <div class="card">C</div>
-  <div class="card">Java</div>
-  <div class="card">C++</div>
-  <div class="card">Web Dev</div>
-  <div class="card">DBMS</div>
-</div>
-</div>
 </section>
 
-<section id="projects" class="hidden">
+<!-- SKILLS -->
+<section id="skills">
+
+<div class="card">
+<h2>🛠 Skills</h2>
+
+<h3>Programming Languages</h3>
+<p>Python, Java, C, C++</p>
+
+<h3>Web Technologies</h3>
+<p>HTML, CSS</p>
+
+<h3>Tools</h3>
+<p>Git, GitHub, VS Code</p>
+
+<h3>Core Concepts</h3>
+<p>Data Structures, DBMS, OOP</p>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
 <div class="card">
 <h2>📂 Projects</h2>
 
 <div class="card">
 <h3>Hospital Management System</h3>
-<p>Manages hospital operations efficiently.</p>
-<a href="#" class="btn">GitHub</a>
+<p>Manages patient records and hospital operations.</p>
 </div>
 
 <div class="card">
 <h3>AI Navigation Assistant</h3>
-<p>Helps visually impaired navigation.</p>
-<a href="#" class="btn">GitHub</a>
+<p>Helps visually impaired people navigate using AI.</p>
 </div>
 
 </div>
+
 </section>
 
-<section id="contact" class="hidden">
+<!-- RESUME -->
+<section>
+
 <div class="card">
-<h2>📞 Contact</h2>
+<h2>📄 My Resume</h2>
+<p>Download my resume to learn more about my education, experience, and skills.</p>
+
+<a href="https://1drv.ms/w/c/339917b643166f05/IQAeIzZ9opJ9S4D_9XJpvrJ8AYeAklrTRfYkzsganQNLnvI?e=dR9Wu8"
+target="_blank" class="btn">
+Download Resume
+</a>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="card">
+<h2>📞 Let's Talk</h2>
 
 <p>Email: gokulsujith72@gmail.com</p>
+<p>Phone: +91 8754252957</p>
+
+<a href="https://github.com/" target="_blank" class="btn">GitHub</a>
 
 <a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">
 LinkedIn
 </a>
 
-<a href="https://1drv.ms/w/c/339917b643166f05/IQAeIzZ9opJ9S4D_9XJpvrJ8AYeAklrTRfYkzsganQNLnvI?e=dR9Wu8"
-target="_blank" class="btn">
-Resume
+</div>
+
+<div class="card">
+<h2>🚀 Ready to collaborate?</h2>
+<p>
+Whether you have a project idea, internship opportunity, or just want to say hello, I'd love to hear from you!
+</p>
+
+<a href="mailto:gokulsujith72@gmail.com" class="btn">
+Send me an email
 </a>
 
 </div>
+
 </section>
-
-<script>
-// Scroll animation
-const elements = document.querySelectorAll(".hidden");
-
-window.addEventListener("scroll", () => {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add("show");
-    }
-  });
-});
-</script>
 
 </body>
 </html>
