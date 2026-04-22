@@ -85,11 +85,6 @@ section {
   transform: translateY(-6px);
 }
 
-/* PROJECT HOVER */
-.project:hover {
-  transform: scale(1.03);
-}
-
 /* FORM */
 input, textarea {
   width: 100%;
@@ -97,7 +92,6 @@ input, textarea {
   margin: 10px 0;
   border-radius: 8px;
   border: none;
-  outline: none;
 }
 </style>
 </head>
@@ -110,8 +104,9 @@ input, textarea {
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Hi, I'm <span class="gradient">Sujith</span></h1>
+  <h1>Hi, I'm <span class="gradient">Sujith K</span> 👋</h1>
   <h2 class="typing" id="typing"></h2>
+  <p>AI Developer • Web Developer • UI/UX Enthusiast</p>
 
   <a href="#projects" class="btn">View Projects</a>
   <a href="#contact" class="btn">Get In Touch</a>
@@ -121,20 +116,64 @@ input, textarea {
 <section>
 <div class="card">
 <h2>👤 About Me</h2>
-<p>Passionate developer focused on AI and web technologies.</p>
+<p>
+Hello! I'm Sujith, a 2nd-year B.E Computer Science and Design student at Easwari Engineering College.
+I am passionate about web development, UI/UX design, and building meaningful solutions using AI.
+</p>
+</div>
+
+<div class="card">
+<h2>🎓 Education</h2>
+<p><b>B.E Computer Science and Design</b><br>
+Easwari Engineering College (Autonomous)<br>
+Second Year • Chennai, India</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section>
+<div class="card">
+<h2>🛠 Skills</h2>
+
+<p><b>Programming:</b> Python, Java, C, C++</p>
+<p><b>Web:</b> HTML, CSS</p>
+<p><b>Tools:</b> Git, GitHub, VS Code</p>
+<p><b>Core:</b> Data Structures, DBMS, OOP</p>
+
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<div class="card project">
-<h3>Hospital Management System</h3>
-<p>Manages hospital data efficiently.</p>
+
+<div class="card">
+<h3>🏥 Hospital Management System</h3>
+<p>Manages patient records, appointments, and hospital operations.</p>
 </div>
 
-<div class="card project">
-<h3>AI Navigation Assistant</h3>
-<p>AI-based navigation system.</p>
+<div class="card">
+<h3>🧭 AI Navigation Assistant</h3>
+<p>Helps visually impaired people navigate using AI and object detection.</p>
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+<div class="card">
+<h2>💼 Experience</h2>
+<p><b>Web Development Intern – InternPe</b></p>
+<p>Worked on web development tasks and gained hands-on experience.</p>
+</div>
+</section>
+
+<!-- RESUME -->
+<section>
+<div class="card">
+<h2>📄 Resume</h2>
+<a href="https://1drv.ms/w/c/339917b643166f05/IQAeIzZ9opJ9S4D_9XJpvrJ8AYeAklrTRfYkzsganQNLnvI?e=dR9Wu8" target="_blank" class="btn">
+Download Resume
+</a>
 </div>
 </section>
 
@@ -142,41 +181,38 @@ input, textarea {
 <section id="contact">
 
 <div class="card">
-<h2>📩 Contact Me</h2>
+<h2>📞 Contact</h2>
+<p>Email: gokulsujith72@gmail.com</p>
+<p>Phone: +91 8754252957</p>
 
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="4" placeholder="Message"></textarea>
-<button class="btn">Send</button>
-</form>
+<a href="https://github.com/" target="_blank" class="btn">GitHub</a>
+<a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">LinkedIn</a>
 
 </div>
 
 <div class="card">
-<a href="mailto:gokulsujith72@gmail.com" class="btn">Email Me</a>
-<a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">LinkedIn</a>
+<h2>🚀 Ready to collaborate?</h2>
+<p>Feel free to reach out for projects, internships, or collaborations.</p>
+
+<a href="mailto:gokulsujith72@gmail.com" class="btn">Send Email</a>
 </div>
 
 </section>
 
 <script>
-// typing effect
 const text = ["AI Developer", "Web Developer", "UI/UX Enthusiast"];
 let i=0, j=0, current="", isDeleting=false;
 
-function type() {
+function type(){
   current = text[i];
-  
   if(!isDeleting){
-    document.getElementById("typing").textContent = current.substring(0, j++);
-    if(j > current.length){ isDeleting = true; setTimeout(type, 1000); return; }
+    document.getElementById("typing").textContent = current.substring(0,j++);
+    if(j>current.length){isDeleting=true; setTimeout(type,1000); return;}
   } else {
-    document.getElementById("typing").textContent = current.substring(0, j--);
-    if(j == 0){ isDeleting = false; i = (i+1)%text.length; }
+    document.getElementById("typing").textContent = current.substring(0,j--);
+    if(j==0){isDeleting=false;i=(i+1)%text.length;}
   }
-  
-  setTimeout(type, isDeleting ? 50 : 100);
+  setTimeout(type,isDeleting?50:100);
 }
 type();
 </script>
