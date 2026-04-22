@@ -2,103 +2,104 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sujith Portfolio</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #f5f7fa;
-  --text: #222;
-  --card: #ffffff;
-  --accent: #4a90e2;
-}
-
-body.dark {
-  --bg: #121212;
-  --text: #eee;
-  --card: #1e1e1e;
+  --bg: #0f172a;
+  --card: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.1);
+  --text: #e2e8f0;
+  --accent: linear-gradient(135deg, #6366f1, #22c55e);
 }
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: 0.3s;
 }
 
-/* Header */
-header {
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+nav a {
+  color: var(--text);
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
   text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.gradient {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* SECTION */
+section {
+  max-width: 1000px;
+  margin: auto;
   padding: 40px 20px;
 }
 
-h1 {
-  margin: 0;
-}
-
-.toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  padding: 8px 12px;
-  background: var(--card);
-  border-radius: 8px;
-}
-
-/* Section */
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Cards */
+/* GLASS CARD */
 .card {
   background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-/* Grid */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 15px;
+  gap: 20px;
 }
 
-/* Button */
+/* BUTTON */
 .btn {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 18px;
+  border-radius: 10px;
   background: var(--accent);
   color: white;
-  border-radius: 8px;
   text-decoration: none;
 }
 
-/* Animation */
+/* ANIMATION */
 .fade {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1s forwards;
+  animation: fade 1s forwards;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fade {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 </style>
@@ -106,63 +107,52 @@ section {
 
 <body>
 
-<div class="toggle" onclick="toggleMode()">🌙/☀️</div>
+<nav>
+  <h3 class="gradient">Sujith</h3>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
 
-<header class="fade">
-  <h1>Sujith K</h1>
-  <p>AI Developer | Student</p>
-</header>
+<div class="hero fade">
+  <h1>Hi, I'm <span class="gradient">Sujith</span> 👋</h1>
+  <p>AI Developer | Web Developer | UI/UX Enthusiast</p>
+</div>
 
 <section>
 
 <div class="card fade">
-<h2>👤 About Me</h2>
+<h2>👤 About</h2>
 <p>
-Hello! I'm Sujith, a Computer Science and Design student passionate about web development and UI/UX.
-I enjoy building meaningful solutions and aim to grow as a developer.
+Passionate Computer Science student focused on building real-world solutions using AI and modern web technologies.
 </p>
 </div>
 
 <div class="card fade">
-<h2>🎓 Academic</h2>
-<p><b>B.E. Computer Science and Design</b><br>
-Easwari Engineering College<br>
-Second Year | Chennai</p>
-</div>
-
-<div class="card fade">
 <h2>🛠 Skills</h2>
-
 <div class="grid">
-  <div class="card">🐍 Python</div>
-  <div class="card">⚙️ C</div>
-  <div class="card">☕ Java</div>
-  <div class="card">💻 C++</div>
-  <div class="card">🌐 Web Development</div>
-  <div class="card">🗄 DBMS</div>
+  <div class="card">Python</div>
+  <div class="card">C</div>
+  <div class="card">Java</div>
+  <div class="card">C++</div>
+  <div class="card">Web Dev</div>
+  <div class="card">DBMS</div>
 </div>
-
 </div>
 
 <div class="card fade">
 <h2>📂 Projects</h2>
-
 <div class="card">
-<h3>🏥 Hospital Management System</h3>
-<p>Manages patient records and hospital operations.</p>
+<h3>Hospital Management System</h3>
+<p>Manages hospital data efficiently.</p>
 </div>
-
 <div class="card">
-<h3>🧭 AI Navigation Assistant</h3>
-<p>Helps visually impaired people using AI.</p>
+<h3>AI Navigation Assistant</h3>
+<p>AI-based system for visually impaired navigation.</p>
 </div>
-
-</div>
-
-<div class="card fade">
-<h2>💼 Experience</h2>
-<p><b>Web Development Intern – InternPe</b></p>
-<p>Worked on real-world web tasks.</p>
 </div>
 
 <div class="card fade">
@@ -170,26 +160,18 @@ Second Year | Chennai</p>
 
 <p>Email: gokulsujith72@gmail.com</p>
 
-<p>
-<a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank">
-🔗 LinkedIn
+<a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">
+LinkedIn
 </a>
-</p>
 
 <a href="https://1drv.ms/w/c/339917b643166f05/IQAeIzZ9opJ9S4D_9XJpvrJ8AYeAklrTRfYkzsganQNLnvI?e=dR9Wu8"
 target="_blank" class="btn">
-📄 Resume
+Resume
 </a>
 
 </div>
 
 </section>
-
-<script>
-function toggleMode() {
-  document.body.classList.toggle("dark");
-}
-</script>
 
 </body>
 </html>
