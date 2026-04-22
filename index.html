@@ -34,12 +34,6 @@ nav {
   padding: 15px 40px;
 }
 
-nav a {
-  color: var(--text);
-  margin-left: 20px;
-  text-decoration: none;
-}
-
 /* HERO */
 .hero {
   text-align: center;
@@ -52,6 +46,13 @@ nav a {
   color: transparent;
 }
 
+.typing {
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* BUTTON */
 .btn {
   display: inline-block;
   margin: 10px;
@@ -77,13 +78,26 @@ section {
   border-radius: 16px;
   padding: 20px;
   margin-bottom: 20px;
+  transition: 0.3s;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-  gap: 20px;
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* PROJECT HOVER */
+.project:hover {
+  transform: scale(1.03);
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 </style>
 </head>
@@ -92,131 +106,80 @@ section {
 
 <nav>
   <h3 class="gradient">Sujith</h3>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
 </nav>
 
-<!-- HOME -->
-<div id="home" class="hero">
-  <h1>Hi, I'm <span class="gradient">Sujith</span> 👋</h1>
-  <p>Web Developer</p>
+<!-- HERO -->
+<div class="hero">
+  <h1>Hi, I'm <span class="gradient">Sujith</span></h1>
+  <h2 class="typing" id="typing"></h2>
 
   <a href="#projects" class="btn">View Projects</a>
   <a href="#contact" class="btn">Get In Touch</a>
 </div>
 
 <!-- ABOUT -->
-<section id="about">
-
+<section>
 <div class="card">
 <h2>👤 About Me</h2>
-<p>
-Hello! I'm Sujith, a Computer Science and Design student passionate about building real-world solutions using AI and web technologies.
-</p>
+<p>Passionate developer focused on AI and web technologies.</p>
 </div>
-
-<div class="card">
-<h2>🎓 Education</h2>
-<p><b>B.E. Computer Science and Design</b><br>
-Easwari Engineering College (Autonomous)<br>
-Second Year • Chennai</p>
-</div>
-
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-
-<div class="card">
-<h2>🛠 Skills</h2>
-
-<h3>Programming Languages</h3>
-<p>Python, Java, C, C++</p>
-
-<h3>Web Technologies</h3>
-<p>HTML, CSS</p>
-
-<h3>Tools</h3>
-<p>Git, GitHub, VS Code</p>
-
-<h3>Core Concepts</h3>
-<p>Data Structures, DBMS, OOP</p>
-
-</div>
-
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-
-<div class="card">
-<h2>📂 Projects</h2>
-
-<div class="card">
+<div class="card project">
 <h3>Hospital Management System</h3>
-<p>Manages patient records and hospital operations.</p>
+<p>Manages hospital data efficiently.</p>
 </div>
 
-<div class="card">
+<div class="card project">
 <h3>AI Navigation Assistant</h3>
-<p>Helps visually impaired people navigate using AI.</p>
+<p>AI-based navigation system.</p>
 </div>
-
-</div>
-
-</section>
-
-<!-- RESUME -->
-<section>
-
-<div class="card">
-<h2>📄 My Resume</h2>
-<p>Download my resume to learn more about my education, experience, and skills.</p>
-
-<a href="https://1drv.ms/w/c/339917b643166f05/IQAeIzZ9opJ9S4D_9XJpvrJ8AYeAklrTRfYkzsganQNLnvI?e=dR9Wu8"
-target="_blank" class="btn">
-Download Resume
-</a>
-
-</div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
 
 <div class="card">
-<h2>📞 Let's Talk</h2>
+<h2>📩 Contact Me</h2>
 
-<p>Email: gokulsujith72@gmail.com</p>
-<p>Phone: +91 8754252957</p>
-
-<a href="https://github.com/" target="_blank" class="btn">GitHub</a>
-
-<a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">
-LinkedIn
-</a>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="4" placeholder="Message"></textarea>
+<button class="btn">Send</button>
+</form>
 
 </div>
 
 <div class="card">
-<h2>🚀 Ready to collaborate?</h2>
-<p>
-Whether you have a project idea, internship opportunity, or just want to say hello, I'd love to hear from you!
-</p>
-
-<a href="mailto:gokulsujith72@gmail.com" class="btn">
-Send me an email
-</a>
-
+<a href="mailto:gokulsujith72@gmail.com" class="btn">Email Me</a>
+<a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">LinkedIn</a>
 </div>
 
 </section>
+
+<script>
+// typing effect
+const text = ["AI Developer", "Web Developer", "UI/UX Enthusiast"];
+let i=0, j=0, current="", isDeleting=false;
+
+function type() {
+  current = text[i];
+  
+  if(!isDeleting){
+    document.getElementById("typing").textContent = current.substring(0, j++);
+    if(j > current.length){ isDeleting = true; setTimeout(type, 1000); return; }
+  } else {
+    document.getElementById("typing").textContent = current.substring(0, j--);
+    if(j == 0){ isDeleting = false; i = (i+1)%text.length; }
+  }
+  
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+type();
+</script>
 
 </body>
 </html>
