@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sujith Portfolio</title>
+<title>Sujith K | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -34,16 +34,21 @@ nav a {
   color: var(--text);
   margin-left: 20px;
   text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  opacity: 0.7;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 20px 40px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
 }
 
 .gradient {
@@ -56,50 +61,64 @@ nav a {
 section {
   max-width: 1000px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
-/* GLASS CARD */
+/* CARD */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 20px;
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 22px;
   margin-bottom: 20px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
   gap: 20px;
 }
 
 /* BUTTON */
 .btn {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 10px 16px;
   border-radius: 10px;
   background: var(--accent);
   color: white;
   text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* PROJECT CARD */
+.project-card {
+  border-left: 3px solid #6366f1;
 }
 
 /* ANIMATION */
 .fade {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fade 1s forwards;
+  transform: translateY(25px);
+  animation: fade 0.9s forwards;
 }
 
 @keyframes fade {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 </style>
@@ -118,41 +137,62 @@ section {
 </nav>
 
 <div class="hero fade">
-  <h1>Hi, I'm <span class="gradient">Sujith</span> 👋</h1>
-  <p>AI Developer | Web Developer | UI/UX Enthusiast</p>
+  <h1>Hi, I'm <span class="gradient">Sujith K</span> 👋</h1>
+  <p>AI Developer • Web Developer • UI/UX Enthusiast</p>
 </div>
 
 <section>
 
 <div class="card fade">
-<h2>👤 About</h2>
+<h2>👤 About Me</h2>
 <p>
-Passionate Computer Science student focused on building real-world solutions using AI and modern web technologies.
+Hello! I'm a Computer Science and Design student passionate about building real-world solutions using AI and modern web technologies.
+I enjoy creating user-friendly applications and continuously improving my skills.
 </p>
 </div>
 
 <div class="card fade">
-<h2>🛠 Skills</h2>
-<div class="grid">
-  <div class="card">Python</div>
-  <div class="card">C</div>
-  <div class="card">Java</div>
-  <div class="card">C++</div>
-  <div class="card">Web Dev</div>
-  <div class="card">DBMS</div>
+<h2>🎓 Education</h2>
+<p><b>B.E. Computer Science and Design</b><br>
+Easwari Engineering College (Autonomous)<br>
+Second Year • Chennai, India</p>
 </div>
+
+<div class="card fade">
+<h2>🛠 Skills</h2>
+
+<div class="grid">
+  <div class="card">🐍 Python</div>
+  <div class="card">⚙️ C</div>
+  <div class="card">☕ Java</div>
+  <div class="card">💻 C++</div>
+  <div class="card">🌐 Web Development</div>
+  <div class="card">🗄 DBMS</div>
+</div>
+
 </div>
 
 <div class="card fade">
 <h2>📂 Projects</h2>
-<div class="card">
-<h3>Hospital Management System</h3>
-<p>Manages hospital data efficiently.</p>
+
+<div class="card project-card">
+<h3>🏥 Hospital Management System</h3>
+<p>Manages patient records, appointments, and hospital operations efficiently.</p>
+<p><b>Tech:</b> Python, Database</p>
 </div>
-<div class="card">
-<h3>AI Navigation Assistant</h3>
-<p>AI-based system for visually impaired navigation.</p>
+
+<div class="card project-card">
+<h3>🧭 AI Navigation Assistant</h3>
+<p>AI-powered system helping visually impaired individuals navigate safely.</p>
+<p><b>Tech:</b> Python, AI, Object Detection</p>
 </div>
+
+</div>
+
+<div class="card fade">
+<h2>💼 Experience</h2>
+<p><b>Web Development Intern – InternPe</b></p>
+<p>Gained hands-on experience in building web applications and solving real-world problems.</p>
 </div>
 
 <div class="card fade">
@@ -161,12 +201,12 @@ Passionate Computer Science student focused on building real-world solutions usi
 <p>Email: gokulsujith72@gmail.com</p>
 
 <a href="https://www.linkedin.com/in/sujith-k-b1a16a328/" target="_blank" class="btn">
-LinkedIn
+🔗 LinkedIn
 </a>
 
 <a href="https://1drv.ms/w/c/339917b643166f05/IQAeIzZ9opJ9S4D_9XJpvrJ8AYeAklrTRfYkzsganQNLnvI?e=dR9Wu8"
 target="_blank" class="btn">
-Resume
+📄 Resume
 </a>
 
 </div>
